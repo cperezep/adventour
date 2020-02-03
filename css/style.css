@@ -29,7 +29,7 @@ body {
   /* 95% of thw viewport height */
   height: 95vh;
   /* linear gradient use the back-image property */
-  /* to right bottom css undestand that it should begin since left up */
+  /* to right bottom css understand that it should begin since left up */
   /* The fourth parameter is the opacity (0.8) in order to see the background image */
   background-image: linear-gradient(
       to right bottom,
@@ -75,6 +75,19 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  /* Animation require two porperties to work */
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+
+  /* sets how an animation progresses through the duration of each cycle */
+  animation-timing-function: ease-out;
+
+  /* wait for 3s to start the animation */
+  /* animation-delay: 3s; */
+
+  /* animation happen three times */
+  /* animation-iteration-count: 3; */
 }
 
 .heading-primary-sub {
@@ -82,4 +95,61 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+
+  /* Animation require two porperties to work */
+  /* animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-out; */
+
+  /* shorthand property */
+  animation: moveInRight 2s ease-out;
 }
+
+/* Two types of animations in CSS */
+/* Keyframes */
+@keyframes moveInLeft {
+  /* specify what i want to happen in each moment of time of the animation */
+  /* start */
+  0% {
+    /* invisible */
+    opacity: 0;
+    /* Current position to -100px in x axis (move to left side) */
+    transform: translateX(-100px);
+  }
+
+  80% {
+    /* 0 position to 20px in x axis (move to right side) */
+    transform: translateX(10px);
+  }
+
+  /* finish */
+  100% {
+    opacity: 1;
+    /* translate 0 position */
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* specify what i want to happen in each moment of time of the animation */
+  /* start */
+  0% {
+    /* invisible */
+    opacity: 0;
+    /* Current position to -100px in x axis (move to left side) */
+    transform: translateX(100px);
+  }
+
+  80% {
+    /* 0 position to 20px in x axis (move to right side) */
+    transform: translateX(-10px);
+  }
+
+  /* finish */
+  100% {
+    opacity: 1;
+    /* translate 0 position */
+    transform: translate(0);
+  }
+}
+/* Transition property */
