@@ -63,11 +63,14 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* center its content */
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -105,7 +108,7 @@ body {
   animation: moveInRight 2s ease-out;
 }
 
-/* Two types of animations in CSS */
+/* Two types of animations in CSS: Keyframes - Transition property */
 /* Keyframes */
 @keyframes moveInLeft {
   /* specify what i want to happen in each moment of time of the animation */
@@ -152,4 +155,83 @@ body {
     transform: translate(0);
   }
 }
-/* Transition property */
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* :link is pseudoclass -> special state of a selector, in this case when it is an anchor element */
+/* visited when a user has visited a link (purple color default) */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* two values means top-bottom and left-right */
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  /* All the properties are enabled to be animated (in this case hover and active) */
+  /* It's the initial state */
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* first: offset in x direction, second: offset in y direction */
+  /* third: blur, fourth: color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* state when click the button */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/* pseudo-elements allow us to style certain parts of elements */
+/* after pseudo-element adds like a virtual element right after the element */
+/* add an element that looks exactly like the element but it's behind the element */
+.btn::after {
+  /* always necessary */
+  content: "";
+  /* the after element is a child of element */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  /* animation delay last property */
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* styles up to 0%(in animation) before the animations start */
+  animation-fill-mode: backwards;
+}
