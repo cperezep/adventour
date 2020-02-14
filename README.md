@@ -75,3 +75,55 @@ Notes:
 * Inheritance of a property only works if no one declares a value for that property.
 * The inherit keyword forces inheritance on a certain property.
 * The initial keyword resets a property to its initial value.
+
+## Visual Formatting Model
+Algorithm that calculates boxes and determines the layout of theses boxes, for each element in the render tree, in order to determine the final layout of the page.
+
+In order to do this, the algorithm takes into account
+* Dimensions of boxes: the box model.
+* Box type: inline, block and inline-block.
+* Positioning scheme: floats and positioning. (absolute - relative)
+* Stacking contexts.
+* Other elements in teh render tree.
+* Viewport size, dimensions of images, etc.
+
+### The Box Model
+* Content
+* Padding
+* Border
+* Margin
+* Fill area: area that gets filled with background color or background image.
+
+#### Heights and Widths
+Total width: right border + right padding + specified width + left padding + left border
+Total height: top border + top padding + specified height + bottom padding + bottom border
+
+Solution:
+box-sizing: border-box;
+
+#### Box Types: Inline, Block-Level and Inline-Block
+
+#### Block-level Boxes
+* Elements formatted visually as blocks.
+* 100% of parent's width.
+* Vertically, one after another.
+* Box-model applies as showed:
+
+i.e: display: block, flex, list-item, table;
+
+#### Inline Boxes
+* Content is distributed in lines.
+* Occupies only content's space.
+* No line-breaks.
+* No heights and widths.
+* Paddings and margins only horizontal (left and right).
+
+i.e: display: inline;
+
+#### Inline-block Boxes
+* A mix of block and inline.
+* Occupies only content's space.
+* No line-breaks.
+* Box-model applies as showed.
+
+i.e: display: inline-block;
