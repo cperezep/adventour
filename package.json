@@ -1,0 +1,16 @@
+{
+  "name": "natours-sass",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "crperz",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2"
+  }
+}
