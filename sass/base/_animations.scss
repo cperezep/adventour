@@ -1,0 +1,59 @@
+/* Two types of animations in CSS: Keyframes - Transition property */
+/* Keyframes */
+@keyframes moveInLeft {
+  /* specify what i want to happen in each moment of time of the animation */
+  /* start */
+  0% {
+    /* invisible */
+    opacity: 0;
+    /* Current position to -100px in x axis (move to left side) */
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    /* 0 position to 20px in x axis (move to right side) */
+    transform: translateX(1rem);
+  }
+
+  /* finish */
+  100% {
+    opacity: 1;
+    /* translate 0 position */
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* specify what i want to happen in each moment of time of the animation */
+  /* start */
+  0% {
+    /* invisible */
+    opacity: 0;
+    /* Current position to -100px in x axis (move to left side) */
+    transform: translateX(10rem);
+  }
+
+  80% {
+    /* 0 position to 20px in x axis (move to right side) */
+    transform: translateX(-1rem);
+  }
+
+  /* finish */
+  100% {
+    opacity: 1;
+    /* translate 0 position */
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

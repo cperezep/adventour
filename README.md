@@ -1,3 +1,15 @@
+### CSS Architecture
+7-1 Pattern: 7 folders and one main SASS file to import all the files that are in these folders.
+* Base folder: Which is where we're going to put our basic projects definitions as project boilerplate.
+  * Base partial (_base.scss): This file will be for the real low level basics, such as resets and styles.This file sbould be a partial. Partial files always start with an underscore.
+  * Animations, typography, utilities partials.
+* Abstract folder: We're only going to put code that's not going to output any CSS: Variables, mixins, functions and stuff like that.
+* Components folder: We're going to create one file for each component. Components: Reusable building blocks that make up our website, which are independent and reusable everywhere across our website.
+* Layout folder: For each piece of the global layout of the entire project (global footer, header, etc).
+* page folder: Specific styles for a specific page.
+* themes folder: For web apps with different themes.
+* vendors folder: Where we can put third party CSS (i.e bootstrap, icon system, animation framework).
+
 ## Cascade and Specificity
 Process of combining different stylesheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a certaint element.
 

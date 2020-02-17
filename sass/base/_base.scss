@@ -1,0 +1,24 @@
+/* Universal selector for normalized the CSS in order to make a cross browser reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* Inherit box-sizing: border-box from body element for each element insise body */
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  /* default font-size is 16px */
+  /* if font-size is specified in pixels then the user cant override the size manually in the browser settings  */
+  /* font-size: 10px; */
+  /* Is better practice use % based on default font-size (16px) (10px = 62.5% from 16px) */
+  font-size: 62.5%;
+}
+
+body {
+  /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
+  /* without this, any paddings and borders are added to the height or the width of an element */
+  box-sizing: border-box;
+}

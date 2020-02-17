@@ -1,0 +1,73 @@
+/* The button is a component because it's certainly a building block and it's
+reusable across the page, independent, works everywhere and we can use wherever we want on our page */
+
+/* :link is pseudo-class -> special state of a selector, in this case when it is an anchor element */
+/* visited when a user has visited a link (purple color default) */
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* two values means top-bottom and left-right */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* All the properties are enabled to be animated (in this case hover and active) */
+    /* It's the initial state */
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* first: offset in x direction, second: offset in y direction */
+    /* third: blur, fourth: color */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* state when click the button */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* pseudo-elements allow us to style certain parts of elements */
+  /* after pseudo-element adds like a virtual element right after the element */
+  /* add an element that looks exactly like the element but it's behind the element */
+  &::after {
+    /* always necessary */
+    content: "";
+    /* the after element is a child of element */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    /* animation delay last property */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* styles up to 0%(in animation) before the animations start */
+    animation-fill-mode: backwards;
+  }
+}

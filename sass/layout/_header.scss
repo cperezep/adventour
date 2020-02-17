@@ -1,0 +1,42 @@
+/* header is a layout component because probably it will be in each page on the website  */
+.header {
+  /* 95% of thw viewport height */
+  height: 95vh;
+  /* linear gradient use the back-image property */
+  /* to right bottom css understand that it should begin since left up */
+  /* The fourth parameter is the opacity (0.8) in order to see the background image */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  /* whatever width of the viewport, it'll always try to fit the element inside of the box */
+  background-size: cover;
+  /* whatever viewport size the top of the image always stays at the top of the container */
+  background-position: top;
+  /* specify the polygon in which the element will still be visible */
+  /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    /* center text top, left and transform */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center its content */
+    text-align: center;
+  }
+}
