@@ -5,16 +5,14 @@
   margin: 0;
   padding: 0;
   /* Inherit box-sizing: border-box from body element for each element insise body */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
   /* default font-size is 16px */
   /* if font-size is specified in pixels then the user cant override the size manually in the browser settings  */
   /* font-size: 10px; */
   /* Is better practice use % based on default font-size (16px) (10px = 62.5% from 16px) */
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -25,8 +23,7 @@ body {
   padding: 3rem;
   /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
   /* without this, any paddings and borders are added to the height or the width of an element */
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .header {
   /* 95% of thw viewport height */
@@ -34,12 +31,7 @@ body {
   /* linear gradient use the back-image property */
   /* to right bottom css understand that it should begin since left up */
   /* The fourth parameter is the opacity (0.8) in order to see the background image */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   /* whatever width of the viewport, it'll always try to fit the element inside of the box */
   background-size: cover;
   /* whatever viewport size the top of the image always stays at the top of the container */
@@ -47,63 +39,51 @@ body {
   /* specify the polygon in which the element will still be visible */
   /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  /* center text top, left and transform */
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* center its content */
-  text-align: center;
-}
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* center text top, left and transform */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center its content */
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 6rem;
-}
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* Animation require two porperties to work */
-  animation-name: moveInLeft;
-  animation-duration: 2s;
-  /* sets how an animation progresses through the duration of each cycle */
-  animation-timing-function: ease-out;
-  /* wait for 3s to start the animation */
-  /* animation-delay: 3s; */
-  /* animation happen three times */
-  /* animation-iteration-count: 3; */
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /* Animation require two porperties to work */
-  /* animation-name: moveInRight;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* Animation require two porperties to work */
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    /* sets how an animation progresses through the duration of each cycle */
+    animation-timing-function: ease-out;
+    /* wait for 3s to start the animation */
+    /* animation-delay: 3s; */
+    /* animation happen three times */
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Animation require two porperties to work */
+    /* animation-name: moveInRight;
   animation-duration: 2s;
   animation-timing-function: ease-out; */
-  /* shorthand property */
-  animation: moveInRight 2s ease-out;
-}
+    /* shorthand property */
+    animation: moveInRight 2s ease-out; }
 
 /* Two types of animations in CSS: Keyframes - Transition property */
 /* Keyframes */
@@ -114,19 +94,15 @@ body {
     /* invisible */
     opacity: 0;
     /* Current position to -100px in x axis (move to left side) */
-    transform: translateX(-10rem);
-  }
+    transform: translateX(-10rem); }
   80% {
     /* 0 position to 20px in x axis (move to right side) */
-    transform: translateX(1rem);
-  }
+    transform: translateX(1rem); }
   /* finish */
   100% {
     opacity: 1;
     /* translate 0 position */
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   /* specify what i want to happen in each moment of time of the animation */
@@ -135,96 +111,74 @@ body {
     /* invisible */
     opacity: 0;
     /* Current position to -100px in x axis (move to left side) */
-    transform: translateX(10rem);
-  }
+    transform: translateX(10rem); }
   80% {
     /* 0 position to 20px in x axis (move to right side) */
-    transform: translateX(-1rem);
-  }
+    transform: translateX(-1rem); }
   /* finish */
   100% {
     opacity: 1;
     /* translate 0 position */
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
-  }
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
-/* :link is pseudoclass -> special state of a selector, in this case when it is an anchor element */
+/* :link is pseudo-class -> special state of a selector, in this case when it is an anchor element */
 /* visited when a user has visited a link (purple color default) */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  /* two values means top-bottom and left-right */
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  /* All the properties are enabled to be animated (in this case hover and active) */
-  /* It's the initial state */
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-}
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* first: offset in x direction, second: offset in y direction */
-  /* third: blur, fourth: color */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-/* state when click the button */
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
-
-/* pseudo-elements allow us to style certain parts of elements */
-/* after pseudo-element adds like a virtual element right after the element */
-/* add an element that looks exactly like the element but it's behind the element */
-.btn::after {
-  /* always necessary */
-  content: "";
-  /* the after element is a child of element */
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn--animated {
-  /* animation delay last property */
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /* styles up to 0%(in animation) before the animations start */
-  animation-fill-mode: backwards;
-}
+.btn {
+  /* state when click the button */
+  /* pseudo-elements allow us to style certain parts of elements */
+  /* after pseudo-element adds like a virtual element right after the element */
+  /* add an element that looks exactly like the element but it's behind the element */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* two values means top-bottom and left-right */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* All the properties are enabled to be animated (in this case hover and active) */
+    /* It's the initial state */
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* first: offset in x direction, second: offset in y direction */
+    /* third: blur, fourth: color */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    /* always necessary */
+    content: "";
+    /* the after element is a child of element */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    /* animation delay last property */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* styles up to 0%(in animation) before the animations start */
+    animation-fill-mode: backwards; }
