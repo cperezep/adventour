@@ -166,6 +166,6 @@ i.e. display: inline;
 * A mix of block and inline.
 * Occupies only content's space.
 * No line-breaks.
-* Box-model applies as showed.
+* Box-model applies as showed: In order to use the box model properties on it like padding, margin, and all that good stuff.
 
 i.e. display: inline-block;
