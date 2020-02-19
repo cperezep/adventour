@@ -47,3 +47,30 @@ body {
     animation: moveInRight 2s ease-out;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block; // Trick for cut the width of element (not ocuppy 100% of available width)
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  // The background gets clipped exactly where the text is.
+  // It will clip it to exactly the places where the text sits
+  // This background image will only be visible where the text is.
+  -webkit-background-clip: text;
+  background-clip: text;
+  // Make the text transparent in order to see the background image
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    // x direction, y direction, blur
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}

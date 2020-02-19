@@ -1,90 +1,3 @@
-/* Universal selector for normalized the CSS in order to make a cross browser reset */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  /* Inherit box-sizing: border-box from body element for each element insise body */
-  box-sizing: inherit; }
-
-html {
-  /* default font-size is 16px */
-  /* if font-size is specified in pixels then the user cant override the size manually in the browser settings  */
-  /* font-size: 10px; */
-  /* Is better practice use % based on default font-size (16px) (10px = 62.5% from 16px) */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
-  /* without this, any paddings and borders are added to the height or the width of an element */
-  box-sizing: border-box; }
-
-.header {
-  /* 95% of thw viewport height */
-  height: 95vh;
-  /* linear gradient use the back-image property */
-  /* to right bottom css understand that it should begin since left up */
-  /* The fourth parameter is the opacity (0.8) in order to see the background image */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  /* whatever width of the viewport, it'll always try to fit the element inside of the box */
-  background-size: cover;
-  /* whatever viewport size the top of the image always stays at the top of the container */
-  background-position: top;
-  /* specify the polygon in which the element will still be visible */
-  /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    /* center text top, left and transform */
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* center its content */
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* Animation require two porperties to work */
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    /* sets how an animation progresses through the duration of each cycle */
-    animation-timing-function: ease-out;
-    /* wait for 3s to start the animation */
-    /* animation-delay: 3s; */
-    /* animation happen three times */
-    /* animation-iteration-count: 3; */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    /* Animation require two porperties to work */
-    /* animation-name: moveInRight;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; */
-    /* shorthand property */
-    animation: moveInRight 2s ease-out; }
-
 /* Two types of animations in CSS: Keyframes - Transition property */
 /* Keyframes */
 @keyframes moveInLeft {
@@ -129,6 +42,88 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+/* Universal selector for normalized the CSS in order to make a cross browser reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* Inherit box-sizing: border-box from body element for each element insise body */
+  box-sizing: inherit; }
+
+html {
+  /* default font-size is 16px */
+  /* if font-size is specified in pixels then the user cant override the size manually in the browser settings  */
+  /* font-size: 10px; */
+  /* Is better practice use % based on default font-size (16px) (10px = 62.5% from 16px) */
+  font-size: 62.5%; }
+
+body {
+  /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
+  /* without this, any paddings and borders are added to the height or the width of an element */
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* Animation require two porperties to work */
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    /* sets how an animation progresses through the duration of each cycle */
+    animation-timing-function: ease-out;
+    /* wait for 3s to start the animation */
+    /* animation-delay: 3s; */
+    /* animation happen three times */
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Animation require two porperties to work */
+    /* animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-out; */
+    /* shorthand property */
+    animation: moveInRight 2s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+/* The button is a component because it's certainly a building block and it's
+reusable across the page, independent, works everywhere and we can use wherever we want on our page */
 /* :link is pseudo-class -> special state of a selector, in this case when it is an anchor element */
 /* visited when a user has visited a link (purple color default) */
 .btn {
@@ -182,3 +177,65 @@ body {
     animation: moveInBottom 0.5s ease-out 0.75s;
     /* styles up to 0%(in animation) before the animations start */
     animation-fill-mode: backwards; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+
+/* header is a layout component because probably it will be in each page on the website  */
+.header {
+  /* 95% of thw viewport height */
+  height: 95vh;
+  /* linear gradient use the back-image property */
+  /* to right bottom css understand that it should begin since left up */
+  /* The fourth parameter is the opacity (0.8) in order to see the background image */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /* whatever width of the viewport, it'll always try to fit the element inside of the box */
+  background-size: cover;
+  /* whatever viewport size the top of the image always stays at the top of the container */
+  background-position: top;
+  /* specify the polygon in which the element will still be visible */
+  /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* center text top, left and transform */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center its content */
+    text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
