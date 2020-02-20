@@ -17,6 +17,7 @@
   background-position: top;
   /* specify the polygon in which the element will still be visible */
   /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 
