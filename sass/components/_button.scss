@@ -46,6 +46,15 @@ reusable across the page, independent, works everywhere and we can use wherever 
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
   /* pseudo-elements allow us to style certain parts of elements */
   /* after pseudo-element adds like a virtual element right after the element */
   /* add an element that looks exactly like the element but it's behind the element */
