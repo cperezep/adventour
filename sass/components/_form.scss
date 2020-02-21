@@ -1,0 +1,57 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    // The inherit from the body tag is not working in the case of input's placeholder.
+    // We need forcibly specify that is should be inherited here.
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    width: 90%;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+
+      // Just when the input is focused
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      // Change color input placeholder
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  // Only shown as soon as we have some text on input
+  // When the placeholder is shown on the input element, the label to be hidden
+  // + adjacent sibling selector -> select the sibling element that comes inmediatly AFTER the element (the label needs after the input
+  // ~ general sibling selector
+  &__input:placeholder-shown + &__label {
+    // Why dont we just use the  visibility: hidden without opacity?
+    // Because we cannot animate the visibility
+    opacity: 0; // The element will basically still be on the page
+    visibility: hidden; // The element really gone
+    transform: translateY(-4rem);
+  }
+}
