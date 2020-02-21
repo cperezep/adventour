@@ -144,6 +144,19 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 /* The button is a component because it's certainly a building block and it's
 reusable across the page, independent, works everywhere and we can use wherever we want on our page */
 /* :link is pseudo-class -> special state of a selector, in this case when it is an anchor element */
@@ -366,7 +379,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
@@ -426,13 +439,13 @@ reusable across the page, independent, works everywhere and we can use wherever 
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
 
 /* header is a layout component because probably it will be in each page on the website  */
 .header {
@@ -486,5 +499,5 @@ reusable across the page, independent, works everywhere and we can use wherever 
   margin-top: -10rem; }
 
 .section-stories {
-  padding: 15rem 0;
-  background-color: #eee; }
+  position: relative;
+  padding: 15rem 0; }
