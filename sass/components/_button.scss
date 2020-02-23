@@ -4,6 +4,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
 /* :link is pseudo-class -> special state of a selector, in this case when it is an anchor element */
 /* visited when a user has visited a link (purple color default) */
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -17,6 +18,10 @@ reusable across the page, independent, works everywhere and we can use wherever 
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -32,7 +37,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
   }
 
   /* state when click the button */
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
