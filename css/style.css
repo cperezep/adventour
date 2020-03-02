@@ -1,3 +1,25 @@
+/*
+MEDIA QUERIES MANAGER
+
+0px     600px:      Phone
+600px   900px:    Tablet portrait
+900px   1200px:   Tablet landscape
+1200px  1800px:  Normal styles apply
+1800px+ :         Big desktop
+
+$breakpoint argumnet choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+- rem or em in a media query is always just equal to the font size which is coming
+- from the browser and that's by default 16 pixels.
+- We're going to use ems instead rems because it fails on some browsers.
+- Conclusion ems is the best options for media queries
+
+1em = 16px
+*/
 /* Two types of animations in CSS: Keyframes - Transition property */
 /* Keyframes */
 @keyframes moveInLeft {
@@ -57,6 +79,18 @@ html {
   /* font-size: 10px; */
   /* Is better practice use % based on default font-size (16px) (10px = 62.5% from 16px) */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
@@ -586,13 +620,13 @@ reusable across the page, independent, works everywhere and we can use wherever 
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
 
 /* header is a layout component because probably it will be in each page on the website  */
 .header {

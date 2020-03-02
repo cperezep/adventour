@@ -12,3 +12,52 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*
+MEDIA QUERIES MANAGER
+
+0px     600px:      Phone
+600px   900px:    Tablet portrait
+900px   1200px:   Tablet landscape
+1200px  1800px:  Normal styles apply
+1800px+ :         Big desktop
+
+$breakpoint argumnet choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+- rem or em in a media query is always just equal to the font size which is coming
+- from the browser and that's by default 16 pixels.
+- We're going to use ems instead rems because it fails on some browsers.
+- Conclusion ems is the best options for media queries
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}

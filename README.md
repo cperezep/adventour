@@ -169,3 +169,52 @@ i.e. display: inline;
 * Box-model applies as showed: In order to use the box model properties on it like padding, margin, and all that good stuff.
 
 i.e. display: inline-block;
+
+
+## Responsive Design Strategies
+
+#### Desktop-First
+* Start writing CSS for the desktop: large screen.
+* Then, media queries shrink design to smaller screens.
+* Use max-width: maximum width at which media query still applies (max-width: 600px is width <= 600px)
+
+#### Mobile-First
+* Start writing CSS for mobile devices: small screen.
+* Then, media queries expand design to a large desktop screen.
+* Forces us to reduce websites and apps to the absolute essentials.
+* Use min-width: minimum width at which media query starts to apply (min-width: 600px is width >= 600px)
+
+Media queries don't add any importance or specificity to selectors, so code order matters. Media queries at the end.
+
+### Is Mobile-First right for you?
+#### PROS
+* 100% optimised for the mobile experience.
+* Reduces websites and apps to the absolute essentials.
+* Results in smaller, faster and more efficent products.
+* Prioritizes content over aesthetic design, which may be desirable.
+#### CONS
+* The desktop version might feel overly empty and simplistic.
+* More difficult and counterintuitive to develop.
+* Less creative freedom, making it more difficult to create distinctive products.
+* Clients are used to see a desktop version of the site as a prototype.
+* Do you users even use the mobile internet? What's the purpose of your website?
+
+**NO MATTER WHAT YOU DO, ALWAYS KEEP BOTH DESKTOP AND MOBILE IN MIND**
+
+### Selectiong our Breakpoints: The options
+
+#### Bad Way
+The most used way of choosing breakpoints. It consists of simply using the width of popular devices as the breakpoints. Commonly the designers like to use Apple products. (Problem: If Apple decides to change the resolution of device then you need to change all the mdeia queries).
+
+#### Good Way
+We look at all the most-used devices width on the entire internet, try to group them together in a logical way and then pick our breakpoints from that.
+
+#### Perfect Way:
+Is to ignore devices all together and only look at your content and tour design. If your design no longer looks okay or starts to look weird and out of the place then insert a new breakpoint. This approach is extremely difficult.
+
+### Breakpoints based on StatCounter:
+* Phone : 0 - 600px
+* Tablet Portrait: 600px - 909px
+* Tablet Landscape: 900px - 1200px
+* Desktop: 1200px - 1800px
+* Big Desktop: > 1800px
