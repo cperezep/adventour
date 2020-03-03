@@ -40,4 +40,9 @@ body {
   /* Change the box model so the borders and the paddings are no longer added to the total width or height that we specify for a box */
   /* without this, any paddings and borders are added to the height or the width of an element */
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

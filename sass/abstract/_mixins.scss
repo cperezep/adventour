@@ -33,6 +33,8 @@ $breakpoint argumnet choices:
 - We're going to use ems instead rems because it fails on some browsers.
 - Conclusion ems is the best options for media queries
 
+ORDE: Base + Typography > General Layout + Grid > Page Layout > Components
+
 1em = 16px
 */
 @mixin respond($breakpoint) {
