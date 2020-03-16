@@ -646,46 +646,56 @@ reusable across the page, independent, works everywhere and we can use wherever 
   z-index: 200;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .popup:target {
     opacity: 1;
     visibility: visible; }
   .popup:target .popup__content {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1); }
+    transform: scale(1); }
   .popup__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 75%;
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 3px;
     overflow: hidden;
-    display: table;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.25);
-    transition: all 0.5s 0.2s; }
+    transform: scale(0.25);
+    transition: all 0.5s 0.2s;
+    display: flex; }
+    @media (max-width: 56.25em) {
+      .popup__content {
+        flex-direction: column; } }
   .popup__left {
-    width: 33.333333%;
-    display: table-cell; }
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        flex-direction: row; } }
   .popup__right {
-    width: 66.666667%;
-    display: table-cell;
-    vertical-align: middle;
-    padding: 3rem 5rem; }
+    flex: 1;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 37.5em) {
+      .popup__img {
+        display: inline-block;
+        width: 50%; } }
   .popup__text {
     font-size: 1.4rem;
-    margin-bottom: 4rem;
-    -moz-column-count: 2;
-    -moz-column-gap: 4rem;
-    -moz-column-rule: 1px solid #eee;
+    margin-bottom: 3rem;
     column-count: 2;
-    column-gap: 4rem;
+    column-gap: 2em;
     column-rule: 1px solid #eee;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
