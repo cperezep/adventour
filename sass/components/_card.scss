@@ -17,6 +17,7 @@
     left: 0;
     width: 100%;
     // hidden means that it hides the back part of an element
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     // The image is overflowing the parent in the corners and we can't to see the border
@@ -85,6 +86,7 @@
         url(../img/nat-5-small.jpg);
 
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
         (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom,
@@ -103,6 +105,7 @@
         url(../img/nat-6-small.jpg);
 
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
         (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom,
@@ -121,6 +124,7 @@
         url(../img/nat-7-small.jpg);
 
       @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
         (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom,

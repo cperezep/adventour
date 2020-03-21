@@ -256,9 +256,11 @@ Use a HTML element <picture> which we can specify multiple sources for one image
 ## Responsive images in CSS
 Target resolution.
 192 dpi(dots per inch): Resolution of the Apple retina screen.
-Whenever resolution is higher than 192 dpi and width is larger than 600px, or when de width is larger to 2000px then the code below is applied.
+Whenever resolution is higher than 192 dpi and width is larger than 600px, or when de width is larger to 2000px then the code below is applied. -webkit-min-device-pixel-ratio: 2 for safari
 ```css
-@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+@media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
   background-image: linear-gradient(
     to right bottom,
     rgba($color-primary-light, 0.8),
@@ -267,3 +269,8 @@ Whenever resolution is higher than 192 dpi and width is larger than 600px, or wh
   url(../img/hero.jpg);
 }
 ```
+
+### Warning
+Many of the new CSS features are highly experimental and only work in top modern browsers.
+* Check [caniuse.com](https://www.caniuse.com) before using a modern CSS property in production.
+* Use graceful degradation with @supports.
