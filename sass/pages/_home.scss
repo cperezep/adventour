@@ -18,12 +18,21 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/nat-4.jpg);
+    url(../img/nat-4-small.jpg);
   background-size: cover;
   margin-top: -10rem;
 
   // Skeg all the section and its content
   transform: skewY(-7deg);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/nat-4.jpg);
+  }
 
   // > Direct child selector will only select the first child.
   // Select all children
@@ -104,6 +113,15 @@
         rgba($color-white, 0.9) 100%
       ),
       url(../img/nat-10.jpg);
+  }
+
+  @include respond(phone) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 100%
+      ),
+      url(../img/nat-10-small.jpg);
   }
 
   &__form {

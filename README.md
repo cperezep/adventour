@@ -219,7 +219,7 @@ Is to ignore devices all together and only look at your content and tour design.
 * Desktop: 1200px - 1800px
 * Big Desktop: > 1800px
 
-### Responsive Images
+# Responsive Images
 Tho goal of responsive images is to serve the right image to the right screen size and device, in order to avoid downloading unnecessary large images on smaller screens.
 
 ## When to use responsive images: The 3 use cases.
@@ -227,14 +227,14 @@ Tho goal of responsive images is to serve the right image to the right screen si
 ```html
 <!-- 170px/900 ~= 20vw, 170px/600 ~= 30vw, 300px default width -->
 <!-- src = for browsers that not support srcset, sizes -->
-<img srcset="img/nat-1.jpg, img/nat-1-large.jpg"
+<img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
   sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
   alt="Photo 1"
   class="composition__photo composition__photo--p1"
   src="img/nat-1.jpg">
 ```
 Use the width descriptor (300w, 1000w): Inform to the browser of the width of these images without having to download them to get access to the information.
-Sizes attr: Inform the browser about the approximate width of the image at different viewport width. With both information, the browser can figure out which is the perfect image to use for the current viewport width and the current display resolution.
+Sizes attr: Inform the browser about the approximate width of the image at different viewport width. i.e. In screen max-width: 900px the image will have width: 170px. With both information, the browser can figure out which is the perfect image to use for the current viewport width and the current display resolution.
 
 * Density Switching: @2x screen (high-res) --> @1x screen (low-res): Half the image resolution on @1x screen. Serve a large version of the same image for high resolution screens and serve a smaller version of the same image for a low density screen.
 ```html
@@ -251,4 +251,19 @@ Use a HTML element <picture> which we can specify multiple sources for one image
   <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
   <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
 </picture>
+```
+
+## Responsive images in CSS
+Target resolution.
+192 dpi(dots per inch): Resolution of the Apple retina screen.
+Whenever resolution is higher than 192 dpi and width is larger than 600px, or when de width is larger to 2000px then the code below is applied.
+```css
+@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)
+  ),
+  url(../img/hero.jpg);
+}
 ```
