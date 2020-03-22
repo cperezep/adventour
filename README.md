@@ -274,3 +274,6 @@ Whenever resolution is higher than 192 dpi and width is larger than 600px, or wh
 Many of the new CSS features are highly experimental and only work in top modern browsers.
 * Check [caniuse.com](https://www.caniuse.com) before using a modern CSS property in production.
 * Use graceful degradation with @supports.
+
+### Simple Build Process
+![Build process](build-process.png)
