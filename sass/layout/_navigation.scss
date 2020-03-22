@@ -11,19 +11,21 @@
     top: 6rem;
     right: 6rem;
     border-radius: 50%;
-    z-index: 200;
+    z-index: 5;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
 
     @include respond(tab-port) {
-      top: 4rem;
-      right: 4rem;
+      top: 3rem;
+      right: 3rem;
     }
 
     @include respond(phone) {
-      top: 3.5rem;
-      right: 3.5rem;
+      height: 9rem;
+      width: 9rem;
+      top: 4.7rem;
+      right: 4.7rem;
     }
   }
 
@@ -41,20 +43,20 @@
       $color-primary-light,
       $color-primary-dark
     );
-    z-index: 100;
+    z-index: 3;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
     // Cover all screen (development)
     //transform: scale(50);
 
     @include respond(tab-port) {
-      top: 4.5rem;
-      right: 4.5rem;
+      top: 3.5rem;
+      right: 3.5rem;
     }
 
     @include respond(phone) {
-      top: 4rem;
-      right: 4rem;
+      top: 6.2rem;
+      right: 6.2rem;
     }
   }
 
@@ -63,19 +65,20 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 150;
+    z-index: 4;
 
     opacity: 0;
     visibility: hidden;
     width: 30%;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__list {
-    @include center-horizontal-vertical;
     list-style: none;
-    text-align: center;
-    width: 100%;
   }
 
   &__item {
@@ -115,6 +118,7 @@
       transform: translateX(1rem);
     }
   }
+
   // Functionality
   &__checkbox:checked ~ &__background {
     transform: scale(80);
@@ -130,6 +134,10 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
+
+    @include respond(phone) {
+      margin-top: 4.3rem;
+    }
 
     &,
     &::before,
@@ -150,19 +158,35 @@
 
     &::before {
       top: -0.8rem;
+
+      @include respond(phone) {
+        top: -1rem;
+      }
     }
 
     &::after {
       top: 0.8rem;
+
+      @include respond(phone) {
+        top: 1rem;
+      }
     }
   }
 
   &__button:hover &__icon:before {
     top: -1rem;
+
+    @include respond(phone) {
+      top: -1.2rem;
+    }
   }
 
   &__button:hover &__icon:after {
     top: 1rem;
+
+    @include respond(phone) {
+      top: 1.2rem;
+    }
   }
 
   &__checkbox:checked + &__button &__icon {
