@@ -258,15 +258,27 @@ Target resolution.
 192 dpi(dots per inch): Resolution of the Apple retina screen.
 Whenever resolution is higher than 192 dpi and width is larger than 600px, or when de width is larger to 2000px then the code below is applied. -webkit-min-device-pixel-ratio: 2 for safari
 ```css
-@media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
-    (min-width: 125em) {
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and(min-width: 125em) {
   background-image: linear-gradient(
     to right bottom,
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark, 0.8)
   ),
   url(../img/hero.jpg);
+}
+```
+
+### Touch devices
+```css
+/* Not touch devices */
+@media only screen and (hover: none) {
+  ...
+}
+/* Touch devices */
+@media only screen and (hover: hover) {
+  ...
 }
 ```
 
