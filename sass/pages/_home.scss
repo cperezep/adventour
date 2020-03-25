@@ -74,6 +74,7 @@
 
 // It's not a reusable piece, the reusable is the form component
 .book {
+  width: 90%;
   // solid-color gradient
   // deg: rotation
   // 0% -> white
@@ -102,6 +103,7 @@
   }
 
   @include respond(tab-port) {
+    max-width: 60%;
     background-image: linear-gradient(
         to right,
         rgba($color-white, 0.9) 0%,
