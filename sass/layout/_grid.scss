@@ -42,7 +42,11 @@
   }
 
   .col-1-of-3 {
-    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    width: calc((100% / 3) - #{$gutter-horizontal});
+
+    @include respond(tab-port) {
+      width: calc(100% - #{$gutter-horizontal});
+    }
   }
 
   .col-2-of-3 {

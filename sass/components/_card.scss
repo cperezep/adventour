@@ -226,7 +226,9 @@
   }
 
   @media only screen and (max-width: 56.25rem), only screen and (hover: none) {
+    max-width: 40rem;
     height: auto;
+    margin: 0 auto;
     border-radius: 3px;
     background-color: $color-white;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -273,5 +275,9 @@
     &__price-value {
       font-size: 4rem;
     }
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
   }
 }

@@ -405,7 +405,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
     font-weight: 100; }
   @media only screen and (max-width: 56.25rem), only screen and (hover: none) {
     .card {
+      max-width: 40rem;
       height: auto;
+      margin: 0 auto;
       border-radius: 3px;
       background-color: #fff;
       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
@@ -434,6 +436,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
         text-transform: uppercase; }
       .card__price-value {
         font-size: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .card {
+      max-width: 50rem; } }
 
 .composition {
   position: relative;
@@ -762,7 +767,10 @@ reusable across the page, independent, works everywhere and we can use wherever 
       .row .col-1-of-2 {
         width: calc(100% - 5%); } }
   .row .col-1-of-3 {
-    width: calc((100% - 2 * 5%) / 3); }
+    width: calc((100% / 3) - 5%); }
+    @media only screen and (max-width: 56.25em) {
+      .row .col-1-of-3 {
+        width: calc(100% - 5%); } }
   .row .col-2-of-3 {
     width: calc( 2 * ((100% - 2 * 5%) / 3) + 5%); }
   .row .col-1-of-4 {
@@ -1041,11 +1049,8 @@ reusable across the page, independent, works everywhere and we can use wherever 
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 15rem 0;
+  padding: 25rem 0 10rem 0;
   margin-top: -10rem; }
-  @media only screen and (max-width: 56.25em) {
-    .section-tours {
-      padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   position: relative;
