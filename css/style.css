@@ -614,7 +614,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
   transform: skewX(-12deg); }
   @media only screen and (max-width: 56.25em) {
     .story {
-      width: 90%;
+      width: 80%;
       padding: 4rem;
       padding-left: 7rem; } }
   @media only screen and (max-width: 37.5em) {
