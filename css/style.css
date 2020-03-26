@@ -831,35 +831,34 @@ reusable across the page, independent, works everywhere and we can use wherever 
 .footer {
   background-color: #333;
   color: #f7f7f7;
-  padding: 10rem 0;
+  padding: 10rem 3rem;
   font-size: 1.4rem; }
   @media only screen and (max-width: 56.25em) {
     .footer {
-      padding: 8rem 0; } }
+      padding: 8rem 3rem; } }
   .footer__logo-box {
     text-align: center;
-    margin-bottom: 8rem; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__logo-box {
-        margin-bottom: 6rem; } }
+    margin-bottom: 4rem; }
   .footer__logo {
     width: 15rem;
     height: auto; }
-  .footer__navigation {
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid #777;
-    padding-top: 2rem;
-    /* Inline-block just occupy width what it needs */
-    display: inline-block; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__navigation {
-        width: 100%;
-        text-align: center; } }
-  .footer__list {
-    list-style: none; }
-  .footer__item {
-    display: inline-block; }
-    .footer__item:not(:last-child) {
-      margin-right: 1.5rem; }
+    border-bottom: 1px solid #777;
+    padding: 4rem 2rem; }
+  .footer__navigation {
+    display: flex;
+    list-style: none;
+    margin-top: 2rem; }
+  .footer__item:not(:first-child):before {
+    content: "\007C";
+    margin-right: 1rem; }
+  .footer__item:not(:last-child) {
+    margin-right: 1rem; }
   .footer__link:link, .footer__link:visited {
     color: #f7f7f7;
     background-color: #333;
@@ -871,15 +870,18 @@ reusable across the page, independent, works everywhere and we can use wherever 
     color: #55c57a;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
     transform: rotate(5deg) scale(1.3); }
-  .footer__copyright {
-    border-top: 1px solid #777;
-    padding-top: 2rem;
-    width: 80%;
-    float: right; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__copyright {
-        width: 100%;
-        float: none; } }
+  .footer__social-media {
+    display: flex; }
+  .footer__link-icon {
+    display: flex;
+    align-items: center; }
+    .footer__link-icon:not(:last-child) {
+      margin-right: 2rem; }
+    .footer__link-icon:link, .footer__link-icon:visited {
+      text-decoration: none; }
+  .footer__icon {
+    width: 3rem;
+    height: 3rem; }
 
 .navigation__checkbox {
   display: none; }
