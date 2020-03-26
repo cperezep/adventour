@@ -80,15 +80,16 @@ body {
     font-size: 2.8rem;
   }
 
-  @include respond(phone) {
-    font-size: 2.5rem;
-  }
-
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     // x direction, y direction, blur
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
   }
+}
+
+.heading-secondary--modal {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
 }
 
 .heading-tertiary {
