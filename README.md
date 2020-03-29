@@ -4,7 +4,9 @@
 Check out the [Website here.](https://crperz.github.io/adventour)
 
 ## Three Pilars
-![Pilars](notes-imgs/1.png)
+<p align="center">
+  <img src="notes-imgs/1.png" alt="Pilars">
+</p>
 
 ---
 
@@ -12,15 +14,15 @@ Check out the [Website here.](https://crperz.github.io/adventour)
 Process of combining different style sheets and resolving conflicts between different CSS rules and declarations, when more than one rule applies to a certain element.
 
 ### Author Declarations
-CSS that we the developers write, declarations that we put in style sheets are called Author Declarations
+CSS that we the developers write, declarations that we put in style sheets are called Author Declarations.
 
 ### User Declarations
 CSS coming from the user, i.e. When the user changes the font size in the browser, then this is User CSS.
 
 ### Browser Declarations (User Agent)
-Default style in elements, i.e. anchor tag (blue and underline)
+Default style in elements, i.e. anchor tag (blue and underline).
 
-### Importance > Specificity > Source Order
+## Importance > Specificity > Source Order
 
 ### Importance (1 > ... > 5)
 1. User !important declarations.
@@ -37,7 +39,9 @@ Same importance? &rarr;
 3. Classes, pseudo-classes, attribute.
 4. Elements, pseudo-elements.
 
-![Specificity](notes-imgs/3.png)
+<p align="center">
+  <img src="notes-imgs/3.png" alt="Specificity">
+</p>
 
 Same specificity? &rarr;
 
@@ -104,7 +108,7 @@ We can build more robust responsive layouts because just by changing font sizes,
 ## The Visual Formatting Model
 Algorithm that calculates boxes and determines the layout of theses boxes, for each element in the render tree, in order to determine the final layout of the page.
 
-In order to do this, the algorithm takes into account
+In order to do this, the algorithm takes into account:
 * **Dimensions of boxes**: the box model.
 * **Box type**: inline, block and inline-block.
 * **Positioning scheme**: floats and positioning. (absolute - relative)
@@ -118,11 +122,17 @@ In order to do this, the algorithm takes into account
 * **Border**
 * **Margin**
 * **Fill area**: area that gets filled with background color or background image.
-![Box Model](notes-imgs/4.png)
+<p align="center">
+  <img src="notes-imgs/4.png" alt="Box Model">
+</p>
 
 ### Heights and Widths
-Total width: right border + right padding + specified width + left padding + left border
-Total height: top border + top padding + specified height + bottom padding + bottom border
+<p align="center">
+  Total width: right border + right padding + specified width + left padding + left border
+</p>
+<p align="center">
+  Total height: top border + top padding + specified height + bottom padding + bottom border
+</p>
 
 ![Box Sizing](notes-imgs/5.png)
 ```css
@@ -132,20 +142,27 @@ element {
 }
 ```
 Example:
-![Content Box](notes-imgs/6.png)
-![Border Box](notes-imgs/7.png)
+<p align="center">
+  <img src="notes-imgs/6.png" alt="Content Box">
+</p>
+<p align="center">
+  <img src="notes-imgs/7.png" alt="Border Box">
+</p>
 
 ### Box Types
-
-![Box Types](notes-imgs/8.png)
+<p align="center">
+  <img src="notes-imgs/8.png" alt="Box Types">
+</p>
 
 ### Position Schemes
-
-![Position Schemes](notes-imgs/9.png)
+<p align="center">
+  <img src="notes-imgs/9.png" alt="Position Schemes">
+</p>
 
 ### Stacking Contexts
-
-![Stacking Contexts](notes-imgs/10.png)
+<p align="center">
+  <img src="notes-imgs/10.png" alt="Stacking Contexts">
+</p>
 
 ---
 
@@ -160,16 +177,22 @@ Example:
 * **Independent**, allowing us to use them anywhere on the page.
 #### Atomic Design
 > We’re not designing pages, we’re designing systems of components.—Stephen Hay
-![Atomic-Design](notes-imgs/12.png)
+<p align="center">
+  <img src="notes-imgs/12.png" alt="Atomic Design">
+</p>
 
 ### Build
 Building with meaningful class names.
-![BEM](notes-imgs/13.png)
+<p align="center">
+  <img src="notes-imgs/13.png" alt="BEM">
+</p>
 
 ### Architect
 #### The 7-1 Pattern
 7 different folders for partial Sass files, and 1 main Sass file to import all other files into a compiled CSS stylesheet.
-![7-1 Pattern](notes-imgs/14.png)
+<p align="center">
+  <img src="notes-imgs/14.png" alt="7-1 Pattern">
+</p>
 
 * **base**: Which is where we're going to put our basic projects definitions as project boilerplate.
   * Base partial (_base.scss): This file will be for the real low level basics, such as resets and styles. This file should be a partial. Partial files always start with an underscore.
@@ -185,7 +208,9 @@ Building with meaningful class names.
 
 ## Sass
 Sass is a CSS preprocessor, an extension of CSS that adds power and elegance to the basic language.
-![Sass](notes-imgs/15.png)
+<p align="center">
+  <img src="notes-imgs/15.png" alt="Sass">
+</p>
 
 ### Main Features
 * **Variables**: for reusable values such as colors, font-sizes, spacing, etc.
@@ -198,7 +223,9 @@ Sass is a CSS preprocessor, an extension of CSS that adds power and elegance to 
 * **Control directives**: for writing complex code using conditionals and loops.
 
 ### Sass and Scss
-![Sass/Scss](notes-imgs/16.png)
+<p align="center">
+  <img src="notes-imgs/16.png" alt="Sass/Scss">
+</p>
 
 ---
 
@@ -228,13 +255,13 @@ Three major ways of laying out a webpage or app.
 ### Desktop-First
 * Start writing CSS for the desktop: large screen.
 * Then, media queries shrink design to smaller screens.
-* Use max-width: maximum width at which media query still applies (max-width: 600px is width <= 600px)
+* Use max-width: maximum width at which media query still applies (max-width: 600px is width <= 600px).
 
 ### Mobile-First
 * Start writing CSS for mobile devices: small screen.
 * Then, media queries expand design to a large desktop screen.
 * Forces us to reduce websites and apps to the absolute essentials.
-* Use min-width: minimum width at which media query starts to apply (min-width: 600px is width >= 600px)
+* Use min-width: minimum width at which media query starts to apply (min-width: 600px is width >= 600px).
 
 ![Responsive Design](notes-imgs/17.png)
 
@@ -251,7 +278,7 @@ Three major ways of laying out a webpage or app.
 * Clients are used to see a desktop version of the site as a prototype.
 * Do you users even use the mobile internet? What's the purpose of your website?
 
-**NO MATTER WHAT YOU DO, ALWAYS KEEP BOTH DESKTOP AND MOBILE IN MIND**
+> NO MATTER WHAT YOU DO, ALWAYS KEEP BOTH DESKTOP AND MOBILE IN MIND
 
 ### Selectiong our Breakpoints: The options
 
@@ -280,7 +307,9 @@ Tho goal of responsive images is to serve the right image to the right screen si
 ### When to use responsive images: The 3 use cases.
 #### Resolution Switching:
 
-![Resolution Switching](notes-imgs/19.png)
+<p align="center">
+  <img src="notes-imgs/19.png" alt="Resolution Switching">
+</p>
 
 ```html
 <!-- 170px/900 ~= 20vw, 170px/600 ~= 30vw, 300px default width -->
@@ -291,8 +320,9 @@ Tho goal of responsive images is to serve the right image to the right screen si
   class="composition__photo composition__photo--p1"
   src="img/nat-1.jpg">
 ```
-Use the width descriptor (300w, 1000w): Inform to the browser of the width of these images without having to download them to get access to the information.
-Sizes attr: Inform the browser about the approximate width of the image at different viewport width. i.e. In screen max-width: 900px the image will have width: 170px. With both information, the browser can figure out which is the perfect image to use for the current viewport width and the current display resolution.
+Use the **width descriptor** (300w, 1000w): Inform to the browser of the width of these images without having to download them to get access to the information.
+
+**sizes attr**: Inform the browser about the approximate width of the image at different viewport width. i.e. In screen max-width: 900px the image will have width: 170px. With both information, the browser can figure out which is the perfect image to use for the current viewport width and the current display resolution.
 
 #### Density Switching
 
@@ -303,13 +333,14 @@ Serve a large version of the same image for high resolution screens and serve a 
 <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
 ```
 1x, 2x are the density descriptors.
-srcset allows the browser to choose the best of these two images according the to screen that is used by the user to display the webpage. So if it's a low density screen, it will use the 1x image and if it's a high density screen, it'll use the 2x image.
+
+**srcset** allows the browser to choose the best of these two images according the to screen that is used by the user to display the webpage. So if it's a low density screen, it will use the 1x image and if it's a high density screen, it'll use the 2x image.
 
 #### Art Direction
 
 ![Art Direction](notes-imgs/21.png)
 
-Use a HTML element <picture> which we can specify multiple sources for one image, and then in the source element, we can write a media query like in CSS. It's art direction, different images for different viewport width.
+Use a HTML element *picture* which we can specify multiple sources for one image, and then in the source element, we can write a media query like in CSS. It's art direction, different images for different viewport width.
 ```html
 <!-- Force the browser to use the source image in case that the media query applies -->
 <picture class="footer__logo">
@@ -333,6 +364,7 @@ Use a HTML element <picture> which we can specify multiple sources for one image
 }
 ```
 192 dpi(dots per inch): Resolution of the Apple retina screen.
+
 Whenever resolution is higher than 192 dpi and width is larger than 600px, or when de width is larger to 2000px then the code below is applied. -webkit-min-device-pixel-ratio: 2 for safari
 
 ---
