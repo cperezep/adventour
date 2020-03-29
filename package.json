@@ -1,13 +1,12 @@
 {
-  "name": "natours-sass",
+  "name": "adventour",
   "version": "1.0.0",
+  "description": "Landing page built using HTML/Sass without JS.",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:crperz/natours-sass.git"
+    "url": "git@github.com:crperz/adventour.git"
   },
-  "description": "Landing page for natours",
-  "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
@@ -20,7 +19,6 @@
   },
   "author": "crperz",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "concat": "^1.0.3",

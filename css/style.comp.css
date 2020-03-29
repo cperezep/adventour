@@ -89,7 +89,7 @@ html {
       font-size: 50%; } }
   @media only screen and (max-width: 37.5em) {
     html {
-      font-size: 30%; } }
+      font-size: 40%; } }
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -110,7 +110,6 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: #777; }
 
@@ -127,11 +126,7 @@ body {
     animation-name: moveInLeft;
     animation-duration: 2s;
     /* sets how an animation progresses through the duration of each cycle */
-    animation-timing-function: ease-out;
-    /* wait for 3s to start the animation */
-    /* animation-delay: 3s; */
-    /* animation happen three times */
-    /* animation-iteration-count: 3; */ }
+    animation-timing-function: ease-out; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
@@ -141,10 +136,6 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    /* Animation require two porperties to work */
-    /* animation-name: moveInRight;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; */
     /* shorthand property */
     animation: moveInRight 2s ease-out; }
     @media only screen and (max-width: 37.5em) {
@@ -165,12 +156,13 @@ body {
   @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 2.8rem; } }
-  @media only screen and (max-width: 37.5em) {
-    .heading-secondary {
-      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-secondary--modal {
+  font-size: 2.8rem;
+  letter-spacing: 1px; }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -405,7 +397,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
     font-weight: 100; }
   @media only screen and (max-width: 56.25rem), only screen and (hover: none) {
     .card {
+      max-width: 40rem;
       height: auto;
+      margin: 0 auto;
       border-radius: 3px;
       background-color: #fff;
       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
@@ -434,22 +428,27 @@ reusable across the page, independent, works everywhere and we can use wherever 
         text-transform: uppercase; }
       .card__price-value {
         font-size: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .card {
+      max-width: 50rem; } }
 
 .composition {
-  position: relative; }
+  position: relative;
+  display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .composition {
+      margin: 4rem; } }
   .composition__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
     transition: all 0.2s;
     outline-offset: 2rem; }
     @media only screen and (max-width: 56.25em) {
       .composition__photo {
-        float: left;
         position: relative;
-        width: 33.3333%;
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); } }
     .composition__photo--p1 {
       left: 0;
@@ -465,7 +464,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
         .composition__photo--p2 {
           top: -1;
           transform: scale(1.3);
-          z-index: 11; } }
+          z-index: 2; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
@@ -473,26 +472,31 @@ reusable across the page, independent, works everywhere and we can use wherever 
         .composition__photo--p3 {
           top: 0;
           left: 0;
-          transform: scale(1.1); } }
+          transform: scale(1.2); } }
     .composition__photo:hover {
       outline: 1.5rem solid #55c57a;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
+      z-index: 3; }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
-  padding: 2.5rem;
   text-align: center;
+  padding: 2.5rem;
+  margin: 0 auto;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform 0.3s; }
   @media only screen and (max-width: 56.25em) {
     .feature-box {
+      max-width: 30rem;
       padding: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .feature-box {
+      max-width: 40rem; } }
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
@@ -507,88 +511,88 @@ reusable across the page, independent, works everywhere and we can use wherever 
   .feature-box:hover {
     transform: scale(1.03) translateY(-1.5rem); }
 
-.form__group:not(:last-child) {
-  margin-bottom: 2rem; }
-
-.form__input {
-  font-size: 1.5rem;
-  font-family: inherit;
-  color: inherit;
-  padding: 1.5rem 2rem;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  border-bottom: 3px solid transparent;
-  display: block;
-  width: 90%;
-  transition: all 0.3s; }
-  @media only screen and (max-width: 56.25em) {
-    .form__input {
-      width: 100%; } }
-  .form__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #55c57a; }
-    .form__input:focus:invalid {
-      border-bottom: 3px solid #ff7730; }
-  .form__input::-webkit-input-placeholder {
-    color: #999; }
-
-.form__label {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-left: 2rem;
-  margin-top: 0.7rem;
-  display: block;
-  transition: all 0.3s; }
-
-.form__input:placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4rem); }
-
-.form__radio-group {
-  width: 49%;
-  display: inline-block; }
-  @media only screen and (max-width: 56.25em) {
-    .form__radio-group {
-      width: 100%;
-      margin-bottom: 2rem; } }
-
-.form__radio-input {
-  display: none; }
-
-.form__radio-label {
-  font-size: 1.6rem;
-  cursor: pointer;
-  position: relative;
-  padding-left: 4.5rem; }
-
-.form__radio-button {
-  height: 3rem;
-  width: 3rem;
-  border: 5px solid #55c57a;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: -0.4rem; }
-  .form__radio-button::after {
-    content: "";
+.form {
+  display: flex;
+  flex-direction: column; }
+  .form__group:nth-child(4) {
+    display: flex; }
+    @media only screen and (max-width: 37.5em) {
+      .form__group:nth-child(4) {
+        flex-direction: column; } }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
     display: block;
-    height: 1.3rem;
-    width: 1.3rem;
+    width: 90%;
+    transition: all 0.3s; }
+    @media only screen and (max-width: 56.25em) {
+      .form__input {
+        width: 100%; } }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #55c57a; }
+      .form__input:focus:invalid {
+        border-bottom: 3px solid #ff7730; }
+    .form__input::-webkit-input-placeholder {
+      color: #999; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s; }
+  .form__input:placeholder-shown + .form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+  .form__radio-group {
+    flex-basis: 40%; }
+    .form__radio-group:not(:last-child) {
+      margin-bottom: 2rem; }
+    @media only screen and (max-width: 56.25em) {
+      .form__radio-group {
+        flex-basis: 50%; } }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
     border-radius: 50%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #55c57a;
-    opacity: 0;
-    transition: opacity 0.2s; }
-
-.form__radio-input:checked + .form__radio-label .form__radio-button::after {
-  opacity: 1; }
+    left: 0;
+    top: -0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-width: 37.5em) {
+      .form__radio-button {
+        border: 3px solid #55c57a; } }
+    .form__radio-button::after {
+      content: "";
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity 0.2s; }
+  .form__radio-input:checked + .form__radio-label .form__radio-button::after {
+    opacity: 1; }
 
 .story {
   width: 75%;
@@ -602,7 +606,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
   transform: skewX(-12deg); }
   @media only screen and (max-width: 56.25em) {
     .story {
-      width: 100%;
+      width: 80%;
       padding: 4rem;
       padding-left: 7rem; } }
   @media only screen and (max-width: 37.5em) {
@@ -657,7 +661,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 200;
+  z-index: 5;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
@@ -734,49 +738,47 @@ reusable across the page, independent, works everywhere and we can use wherever 
     color: #55c57a; }
 
 .row {
-  max-width: 114rem;
-  margin: 0 auto; }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
     @media only screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 37.5em) {
     .row {
-      max-width: 50rem;
-      padding: 0 3rem; } }
-  .row::after {
-    content: "";
-    display: table;
-    clear: both; }
-  .row [class^="col-"] {
-    float: left; }
+      flex-direction: column;
+      align-items: center; } }
+  @media only screen and (max-width: 56.25em) {
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 6rem; }
-      @media only screen and (max-width: 56.25em) {
-        .row [class^="col-"]:not(:last-child) {
-          margin-right: 0;
-          margin-bottom: 6rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .row [class^="col-"] {
-        width: 100% !important; } }
+      margin-bottom: 6rem; } }
   .row .col-1-of-2 {
-    width: calc((100% - 6rem) / 2); }
+    width: calc((100% / 2) - 5%); }
+    @media only screen and (max-width: 56.25em) {
+      .row .col-1-of-2 {
+        width: calc(100% - 5%); } }
   .row .col-1-of-3 {
-    width: calc((100% - 2 * 6rem) / 3); }
+    width: calc((100% / 3) - 5%); }
+    @media only screen and (max-width: 56.25em) {
+      .row .col-1-of-3 {
+        width: calc(100% - 5%); } }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc((2 * 100% / 3) - 5%); }
   .row .col-1-of-4 {
-    width: calc((100% - 3 * 6rem) / 4); }
+    width: calc((100% / 4) - 5%); }
+    @media only screen and (max-width: 56.25em) {
+      .row .col-1-of-4 {
+        width: calc((100% / 2) - 5%); } }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc((2 * 100% / 4) - 5%); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+    width: calc((3 * 100% / 4) - 5%); }
 
 /* header is a layout component because probably it will be in each page on the website  */
 .header {
-  /* 95% of thw viewport height */
-  height: 95vh;
+  /* 90% of thw viewport height */
+  height: 90vh;
   /* linear gradient use the back-image property */
   /* to right bottom css understand that it should begin since left up */
   /* The fourth parameter is the opacity (0.8) in order to see the background image */
@@ -787,63 +789,68 @@ reusable across the page, independent, works everywhere and we can use wherever 
   background-position: top;
   /* specify the polygon in which the element will still be visible */
   /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg); } }
   @media only screen and (max-width: 37.5em) {
     .header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); } }
   .header__logo-box {
     position: absolute;
-    top: 4rem;
-    left: 4rem; }
+    top: 4.5rem;
+    left: 4.5rem; }
+    @media only screen and (max-width: 37.5em) {
+      .header__logo-box {
+        top: 6rem;
+        left: 6rem; } }
   .header__logo {
     height: 3.5rem; }
+    @media only screen and (max-width: 37.5em) {
+      .header__logo {
+        height: 6rem; } }
   .header__text-box {
-    position: absolute;
-    /* center text top, left and transform */
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* center its content */
-    text-align: center; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 
 .footer {
   background-color: #333;
   color: #f7f7f7;
-  padding: 10rem 0;
+  padding: 10rem 3rem;
   font-size: 1.4rem; }
   @media only screen and (max-width: 56.25em) {
     .footer {
-      padding: 8rem 0; } }
+      padding: 8rem 3rem; } }
   .footer__logo-box {
     text-align: center;
-    margin-bottom: 8rem; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__logo-box {
-        margin-bottom: 6rem; } }
+    margin-bottom: 4rem; }
   .footer__logo {
     width: 15rem;
     height: auto; }
-  .footer__navigation {
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     border-top: 1px solid #777;
-    padding-top: 2rem;
-    /* Inline-block just occupy width what it needs */
-    display: inline-block; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__navigation {
-        width: 100%;
-        text-align: center; } }
-  .footer__list {
-    list-style: none; }
-  .footer__item {
-    display: inline-block; }
-    .footer__item:not(:last-child) {
-      margin-right: 1.5rem; }
+    border-bottom: 1px solid #777;
+    padding: 4rem 2rem; }
+  .footer__navigation {
+    display: flex;
+    list-style: none;
+    margin-top: 2rem; }
+  .footer__item:not(:first-child):before {
+    content: "\007C";
+    margin-right: 1rem; }
+  .footer__item:not(:last-child) {
+    margin-right: 1rem; }
   .footer__link:link, .footer__link:visited {
     color: #f7f7f7;
     background-color: #333;
@@ -855,15 +862,18 @@ reusable across the page, independent, works everywhere and we can use wherever 
     color: #55c57a;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
     transform: rotate(5deg) scale(1.3); }
-  .footer__copyright {
-    border-top: 1px solid #777;
-    padding-top: 2rem;
-    width: 80%;
-    float: right; }
-    @media only screen and (max-width: 56.25em) {
-      .footer__copyright {
-        width: 100%;
-        float: none; } }
+  .footer__social-media {
+    display: flex; }
+  .footer__link-icon {
+    display: flex;
+    align-items: center; }
+    .footer__link-icon:not(:last-child) {
+      margin-right: 2rem; }
+    .footer__link-icon:link, .footer__link-icon:visited {
+      text-decoration: none; }
+  .footer__icon {
+    width: 3rem;
+    height: 3rem; }
 
 .navigation__checkbox {
   display: none; }
@@ -876,18 +886,20 @@ reusable across the page, independent, works everywhere and we can use wherever 
   top: 6rem;
   right: 6rem;
   border-radius: 50%;
-  z-index: 200;
+  z-index: 5;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
   @media only screen and (max-width: 56.25em) {
     .navigation__button {
-      top: 4rem;
-      right: 4rem; } }
+      top: 3rem;
+      right: 3rem; } }
   @media only screen and (max-width: 37.5em) {
     .navigation__button {
-      top: 3.5rem;
-      right: 3.5rem; } }
+      height: 9rem;
+      width: 9rem;
+      top: 4.7rem;
+      right: 4.7rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -897,36 +909,33 @@ reusable across the page, independent, works everywhere and we can use wherever 
   top: 6.5rem;
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
-  z-index: 100;
+  z-index: 3;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
   @media only screen and (max-width: 56.25em) {
     .navigation__background {
-      top: 4.5rem;
-      right: 4.5rem; } }
+      top: 3.5rem;
+      right: 3.5rem; } }
   @media only screen and (max-width: 37.5em) {
     .navigation__background {
-      top: 4rem;
-      right: 4rem; } }
+      top: 6.2rem;
+      right: 6.2rem; } }
 
 .navigation__nav {
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 150;
+  z-index: 4;
   opacity: 0;
   visibility: hidden;
   width: 30%;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .navigation__list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  text-align: center;
-  width: 100%; }
+  list-style: none; }
 
 .navigation__item {
   margin: 1rem; }
@@ -962,6 +971,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
 .navigation__icon {
   position: relative;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__icon {
+      margin-top: 4.3rem; } }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
     height: 2px;
@@ -974,14 +986,26 @@ reusable across the page, independent, works everywhere and we can use wherever 
     transition: all 0.2s; }
   .navigation__icon::before {
     top: -0.8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__icon::before {
+        top: -1rem; } }
   .navigation__icon::after {
     top: 0.8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .navigation__icon::after {
+        top: 1rem; } }
 
 .navigation__button:hover .navigation__icon:before {
   top: -1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__button:hover .navigation__icon:before {
+      top: -1.2rem; } }
 
 .navigation__button:hover .navigation__icon:after {
   top: 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navigation__button:hover .navigation__icon:after {
+      top: 1.2rem; } }
 
 .navigation__checkbox:checked + .navigation__button .navigation__icon {
   background-color: transparent; }
@@ -996,14 +1020,11 @@ reusable across the page, independent, works everywhere and we can use wherever 
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 25rem 3rem;
   margin-top: -20vh; }
-  @media only screen and (max-width: 56.25em) {
-    .section-about {
-      padding: 20rem 0; } }
   @media only screen and (max-width: 37.5em) {
     .section-about {
-      padding: 30rem 0 20rem 0; } }
+      padding: 30rem 3rem 25rem 3rem; } }
 
 .section-features {
   padding: 20rem 0;
@@ -1018,15 +1039,12 @@ reusable across the page, independent, works everywhere and we can use wherever 
     transform: skewY(7deg); }
   @media only screen and (max-width: 56.25em) {
     .section-features {
-      padding: 10rem 0; } }
+      padding: 15rem 0; } }
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 15rem 0;
+  padding: 25rem 0 10rem 0;
   margin-top: -10rem; }
-  @media only screen and (max-width: 56.25em) {
-    .section-tours {
-      padding: 20rem 0 10rem 0; } }
 
 .section-stories {
   position: relative;
@@ -1043,6 +1061,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
       padding: 10rem 0; } }
 
 .book {
+  width: 90%;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
   border-radius: 3px;
@@ -1053,6 +1072,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
       background-size: cover; } }
   @media only screen and (max-width: 56.25em) {
     .book {
+      max-width: 60%;
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   @media only screen and (max-width: 37.5em) {
     .book {
