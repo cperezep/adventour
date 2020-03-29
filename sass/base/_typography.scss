@@ -1,7 +1,6 @@
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: $color-grey-dark;
 }
@@ -24,12 +23,6 @@ body {
     /* sets how an animation progresses through the duration of each cycle */
     animation-timing-function: ease-out;
 
-    /* wait for 3s to start the animation */
-    /* animation-delay: 3s; */
-
-    /* animation happen three times */
-    /* animation-iteration-count: 3; */
-
     @include respond(phone) {
       letter-spacing: 1rem;
       font-size: 5rem;
@@ -41,11 +34,6 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-
-    /* Animation require two porperties to work */
-    /* animation-name: moveInRight;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; */
 
     /* shorthand property */
     animation: moveInRight 2s ease-out;
