@@ -1,7 +1,7 @@
 /* header is a layout component because probably it will be in each page on the website  */
 .header {
   /* 95% of thw viewport height */
-  height: 95vh;
+  height: 90vh;
   /* linear gradient use the back-image property */
   /* to right bottom css understand that it should begin since left up */
   /* The fourth parameter is the opacity (0.8) in order to see the background image */
@@ -17,8 +17,8 @@
   background-position: top;
   /* specify the polygon in which the element will still be visible */
   /* It will receive four coordinates (x, y) and it's gonna start at the top left corner an then move clockwise  */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   position: relative;
 
   // Target resolution
@@ -37,18 +37,27 @@
   }
 
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   }
 
   &__logo-box {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
+    top: 4.5rem;
+    left: 4.5rem;
+
+    @include respond(phone) {
+      top: 6rem;
+      left: 6rem;
+    }
   }
 
   &__logo {
     height: 3.5rem;
+
+    @include respond(phone) {
+      height: 6rem;
+    }
   }
 
   &__text-box {
