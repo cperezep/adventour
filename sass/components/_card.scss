@@ -280,4 +280,8 @@
   @include respond(phone) {
     max-width: 50rem;
   }
+
+  @include respond(small-phone) {
+    max-width: 40rem;
+  }
 }

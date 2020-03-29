@@ -23,6 +23,12 @@ ORDE: Base + Typography > General Layout + Grid > Page Layout > Components
 1em = 16px
 */
 @mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 25em) {
+      // 400px
+      @content;
+    }
+  }
   @if $breakpoint == phone {
     @media only screen and (max-width: 37.5em) {
       // 600px

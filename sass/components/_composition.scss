@@ -58,10 +58,18 @@
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 3;
+
+      @include respond(phone) {
+        outline: 0.8rem solid $color-primary;
+      }
     }
   }
 
   &:hover &__photo:not(:hover) {
     transform: scale(0.9);
+
+    @include respond(phone) {
+      transform: scale(0.95);
+    }
   }
 }

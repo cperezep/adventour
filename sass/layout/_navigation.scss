@@ -27,6 +27,13 @@
       top: 4.7rem;
       right: 4.7rem;
     }
+
+    @include respond(small-phone) {
+      height: 7rem;
+      width: 7rem;
+      top: 5.7rem;
+      right: 5rem;
+    }
   }
 
   &__background {
@@ -56,6 +63,11 @@
     @include respond(phone) {
       top: 6.2rem;
       right: 6.2rem;
+    }
+
+    @include respond(small-phone) {
+      top: 6.1rem;
+      right: 5.5rem;
     }
   }
 
@@ -136,6 +148,10 @@
 
     @include respond(phone) {
       margin-top: 4.3rem;
+    }
+
+    @include respond(small-phone) {
+      margin-top: 3.4rem;
     }
 
     &,

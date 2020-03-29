@@ -113,12 +113,17 @@
   }
 
   @include respond(phone) {
+    max-width: 70%;
     background-image: linear-gradient(
         to right,
         rgba($color-white, 0.9) 0%,
         rgba($color-white, 0.9) 100%
       ),
       url(../img/nat-10-small.jpg);
+  }
+
+  @include respond(small-phone) {
+    max-width: 90%;
   }
 
   &__form {

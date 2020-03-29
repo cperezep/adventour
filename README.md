@@ -421,13 +421,15 @@ html {
 /*
 MEDIA QUERIES MANAGER
 
-0px     600px:      Phone
+0px     400px:    Small-Phone
+400px   600px:    Phone
 600px   900px:    Tablet portrait
 900px   1200px:   Tablet landscape
-1200px  1800px:  Normal styles apply
+1200px  1800px:   Normal styles apply
 1800px+ :         Big desktop
 
 $breakpoint argumnet choices:
+- small-phone
 - phone
 - tab-port
 - tab-land
@@ -441,6 +443,12 @@ $breakpoint argumnet choices:
 1em = 16px
 */
 @mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 25em) {
+      // 400px
+      @content;
+    }
+  }
   @if $breakpoint == phone {
     @media only screen and (max-width: 37.5em) {
       // 600px
@@ -468,6 +476,9 @@ $breakpoint argumnet choices:
 }
 
 .element {
+  @include respond(small-phone) {
+    ...
+  }
   @include respond(phone) {
     ...
   }

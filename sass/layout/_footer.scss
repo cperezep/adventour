@@ -32,6 +32,10 @@
     display: flex;
     list-style: none;
     margin-top: 2rem;
+
+    @include respond(small-phone) {
+      font-size: 1.04rem;
+    }
   }
 
   &__item {
