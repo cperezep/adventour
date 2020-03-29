@@ -167,7 +167,9 @@ Example:
 ---
 
 ## The Think-Build-Architect Mindset
-![Mindset](notes-imgs/11.png)
+<p align="center">
+  <img src="notes-imgs/11.png" alt="Mindset">
+</p>
 
 ### Think
 #### Component-Driven Design
@@ -297,7 +299,9 @@ Is to ignore devices all together and only look at your content and tour design.
 * Tablet Landscape: 900px - 1200px
 * Desktop: 1200px - 1800px
 * Big Desktop: > 1800px
-![Breakpoints](notes-imgs/18.png)
+<p align="center">
+  <img src="notes-imgs/18.png" alt="Breakpoints">
+</p>
 
 ---
 
@@ -326,7 +330,9 @@ Use the **width descriptor** (300w, 1000w): Inform to the browser of the width o
 
 #### Density Switching
 
-![Density Switching](notes-imgs/20.png)
+<p align="center">
+  <img src="notes-imgs/20.png" alt="Density Switching">
+</p>
 
 Serve a large version of the same image for high resolution screens and serve a smaller version of the same image for a low density screen.
 ```html
@@ -338,7 +344,9 @@ Serve a large version of the same image for high resolution screens and serve a 
 
 #### Art Direction
 
-![Art Direction](notes-imgs/21.png)
+<p align="center">
+  <img src="notes-imgs/21.png" alt="Art Direction">
+</p>
 
 Use a HTML element *picture* which we can specify multiple sources for one image, and then in the source element, we can write a media query like in CSS. It's art direction, different images for different viewport width.
 ```html
@@ -585,7 +593,7 @@ The ::selection CSS pseudo-element applies styles to the part of a document that
 }
 ```
 
-#### clip-path property
+#### Clip-path property
 ```scss
 .header {
   /* specify the polygon in which the element will still be visible */
@@ -607,7 +615,7 @@ The ::selection CSS pseudo-element applies styles to the part of a document that
 }
 ```
 
-#### calc()
+#### Calc()
 ```scss
 $gutter-horizontal: 8rem;
 // calc() is CSS functions for make calculations using mix units
