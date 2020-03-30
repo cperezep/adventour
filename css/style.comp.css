@@ -431,13 +431,19 @@ reusable across the page, independent, works everywhere and we can use wherever 
   @media only screen and (max-width: 37.5em) {
     .card {
       max-width: 50rem; } }
+  @media only screen and (max-width: 25em) {
+    .card {
+      width: 80%; } }
 
 .composition {
   position: relative;
   display: flex; }
   @media only screen and (max-width: 56.25em) {
     .composition {
-      margin: 4rem; } }
+      margin: 2rem; } }
+  @media only screen and (max-width: 25em) {
+    .composition {
+      margin: 0; } }
   .composition__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
@@ -478,8 +484,14 @@ reusable across the page, independent, works everywhere and we can use wherever 
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 3; }
+      @media only screen and (max-width: 37.5em) {
+        .composition__photo:hover {
+          outline: 0.8rem solid #55c57a; } }
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
+    @media only screen and (max-width: 37.5em) {
+      .composition:hover .composition__photo:not(:hover) {
+        transform: scale(0.95); } }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
@@ -828,6 +840,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
   @media only screen and (max-width: 56.25em) {
     .footer {
       padding: 8rem 3rem; } }
+  @media only screen and (max-width: 25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 4rem; }
@@ -846,6 +861,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
     display: flex;
     list-style: none;
     margin-top: 2rem; }
+    @media only screen and (max-width: 25em) {
+      .footer__navigation {
+        font-size: 1rem; } }
   .footer__item:not(:first-child):before {
     content: "\007C";
     margin-right: 1rem; }
@@ -900,6 +918,12 @@ reusable across the page, independent, works everywhere and we can use wherever 
       width: 9rem;
       top: 4.7rem;
       right: 4.7rem; } }
+  @media only screen and (max-width: 25em) {
+    .navigation__button {
+      height: 7rem;
+      width: 7rem;
+      top: 5.7rem;
+      right: 5rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -919,6 +943,10 @@ reusable across the page, independent, works everywhere and we can use wherever 
     .navigation__background {
       top: 6.2rem;
       right: 6.2rem; } }
+  @media only screen and (max-width: 25em) {
+    .navigation__background {
+      top: 6.1rem;
+      right: 5.5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -974,6 +1002,9 @@ reusable across the page, independent, works everywhere and we can use wherever 
   @media only screen and (max-width: 37.5em) {
     .navigation__icon {
       margin-top: 4.3rem; } }
+  @media only screen and (max-width: 25em) {
+    .navigation__icon {
+      margin-top: 3.4rem; } }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
     height: 2px;
@@ -1024,7 +1055,7 @@ reusable across the page, independent, works everywhere and we can use wherever 
   margin-top: -20vh; }
   @media only screen and (max-width: 37.5em) {
     .section-about {
-      padding: 30rem 3rem 25rem 3rem; } }
+      padding: 26rem 3rem 20rem 3rem; } }
 
 .section-features {
   padding: 20rem 0;
@@ -1076,7 +1107,11 @@ reusable across the page, independent, works everywhere and we can use wherever 
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   @media only screen and (max-width: 37.5em) {
     .book {
+      max-width: 70%;
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10-small.jpg); } }
+  @media only screen and (max-width: 25em) {
+    .book {
+      max-width: 90%; } }
   .book__form {
     width: 50%;
     padding: 6rem; }
