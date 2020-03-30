@@ -8,6 +8,10 @@
     padding: 8rem 3rem;
   }
 
+  @include respond(small-phone) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center;
     margin-bottom: 4rem;
@@ -34,7 +38,7 @@
     margin-top: 2rem;
 
     @include respond(small-phone) {
-      font-size: 1.04rem;
+      font-size: 1rem;
     }
   }
 

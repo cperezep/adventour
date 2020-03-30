@@ -282,6 +282,6 @@
   }
 
   @include respond(small-phone) {
-    max-width: 40rem;
+    width: 80%;
   }
 }

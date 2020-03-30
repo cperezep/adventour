@@ -3,7 +3,11 @@
   display: flex;
 
   @include respond(tab-port) {
-    margin: 4rem;
+    margin: 2rem;
+  }
+
+  @include respond(small-phone) {
+    margin: 0;
   }
 
   &__photo {
