@@ -1,7 +1,7 @@
 # CSS/Sass Notes ⚡️
 
 ## Live Demo
-Check out the [Website here.](https://crperz.github.io/adventour)
+Check out the [Website here.](https://perezcr.github.io/adventour)
 
 ## Three Pilars
 <p align="center">
